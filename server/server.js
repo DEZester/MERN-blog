@@ -6,10 +6,7 @@ dotenv.config()
 
 const PORT = process.env.PORT || 3001
 
-mongoose.connect(process.env.MONGO_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URL)
   .then(() => { app.listen(PORT, () => console.log(`Server is started with port:${process.env.PORT}`))})
   .catch((err) => console.log(`${err} did not connect`))
 
