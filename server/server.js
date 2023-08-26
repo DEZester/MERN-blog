@@ -1,8 +1,17 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-const app = express()
+import cors from 'cors'
+
 dotenv.config()
+const app = express()
+
+app.use(cors())
+app.use(express.json())
+
+app.get('/', (req, res) => {
+   return res.json({message: 'Hello world2'})
+})
 
 const PORT = process.env.PORT || 3001
 
